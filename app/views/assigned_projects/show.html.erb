@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <p class="lead">
+  <strong>Project:</strong>
+  <%= @assigned_project.project_id %>
+  <br/>
+  <br/>
+  <strong>Employee:</strong>
+  <%= @assigned_project.employee_id %>
+  </p>
+  <hr class="my-4">
+  <p class="lead">
+  <%= link_to 'Edit', edit_assigned_project_path(@assigned_project),class:"btn btn-outline-primary btn-md" %>
+  <%= link_to 'Back', assigned_projects_path , class:"btn btn-outline-secondary btn-md"%>
+  </p>
+</div>

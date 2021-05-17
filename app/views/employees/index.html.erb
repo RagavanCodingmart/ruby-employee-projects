@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employees</h1>
+<div class="table-responsive">
+<table class='table table-striped'>
+  <thead class='text-center'>
+    <tr>
+      <th>Id</th>
+      <th>Employee_Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class='text-center'>
+    <% @employees.each do |employee| %>
+      <tr>
+        <th><%= employee.employee_id %></th>
+        <th><%= employee.employee_name %></th>
+        <th><%= employee.email %></th>
+        <th><%= employee.phone %></th>
+        <th><%= link_to 'Show', employee, class:'btn btn-outline-info' %></th>
+        <th><%= link_to 'Edit', edit_employee_path(employee), class:'btn btn-outline-warning' %></th>
+        <th><%= link_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger' %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path %>

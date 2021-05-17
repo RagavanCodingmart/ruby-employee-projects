@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projects</h1>
+
+<table class='table table-striped'>
+  <thead class='text-center'>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th colspan="3"> Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class='text-center'>
+    <% @projects.each do |project| %>
+      <tr>
+        <th><%= project.id %></th>
+        <th><%= project.title %></th>
+        <th><%= project.description %></th>
+        <th><%= project.status %></th>
+        <th><%= link_to 'Show', project, class:'btn btn-outline-info' %></th>
+        <th><%= link_to 'Edit', edit_project_path(project), class:'btn btn-outline-warning' %></th>
+        <th><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger' %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

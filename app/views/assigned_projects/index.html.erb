@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assigned Projects</h1>
+
+<table class='table table-striped'>
+  <thead  class='text-center'>
+    <tr>
+      <th scope="col">Employee</th>
+      <th scope="col">Project</th>
+      <th scope="col" colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class='text-center'>
+    <% @assigned_projects.each do |assigned_project| %>
+      <tr>
+        <th><%= assigned_project.employee_id %></th>
+        <th><%= assigned_project.project_id %></th>
+        <th><%= link_to 'Show', assigned_project, class:'btn btn-outline-info' %></th>
+        <th><%= link_to 'Edit', edit_assigned_project_path(assigned_project), class:'btn btn-outline-warning'  %></th>
+        <th><%= link_to 'Destroy', assigned_project, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-outline-danger'  %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assigned Project', new_assigned_project_path %>
